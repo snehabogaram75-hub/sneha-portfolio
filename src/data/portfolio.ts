@@ -1,64 +1,78 @@
 /**
- * Central portfolio data — generated from Sushmita's resume (Sushmita_dasari.pdf).
- * Every fact on the site comes from this file. Update it here and the whole site follows.
- * Nothing here should be added unless it appears on the resume.
+ * Portfolio data for Sneha Bogaram.
+ * Existing Netflix-style UI is preserved; only portfolio content is updated.
  */
 
-export type Palette = { from: string; via: string; to: string; accent: string };
+export type Palette = {
+  from: string;
+  via: string;
+  to: string;
+  accent: string;
+};
+
+const crimson: Palette = { from: '#24060b', via: '#6e0d1d', to: '#09070a', accent: '#ff3d5a' };
+const amber: Palette = { from: '#1c1003', via: '#6b3c06', to: '#0a0806', accent: '#ffb547' };
+const ocean: Palette = { from: '#04121f', via: '#0f4c6e', to: '#05080d', accent: '#4cc9ff' };
+const violet: Palette = { from: '#120822', via: '#3d1a6e', to: '#07060c', accent: '#b98bff' };
+const jade: Palette = { from: '#03150f', via: '#0d5a40', to: '#050a08', accent: '#46e3a8' };
 
 export const profile = {
-  fullName: 'Dasari Venkata Ratna Sri Sushmita',
-  displayName: 'Sushmita Dasari',
-  firstName: 'SUSHMITA',
+  fullName: 'Sneha Bogaram',
+  displayName: 'Sneha Bogaram',
+  firstName: 'SNEHA',
   seriesTag: 'THE SERIES',
-  /** Fictional studio card shown at the very start of the opening sequence. */
-  originalLabel: 'A DASARI ORIGINAL',
-  role: 'Full-Stack Developer',
-  tagline: ['Full-Stack Developer', 'AI / ML', 'Java'],
-  intro:
-    'A B.Tech Artificial Intelligence & Machine Learning student (CGPA 9.10) and full-stack developer building AI-powered platforms, payment systems and multi-tenant SaaS with Java, Python, React, Node.js and Docker.',
-  location: 'Surampalem, Andhra Pradesh',
-  email: 'sushmitadasari17@gmail.com',
+  originalLabel: 'A SNEHA BOGARAM ORIGINAL',
+  role: 'Computer Science Engineer • Data Analyst • AI/ML',
+  tagline: ['Computer Science Engineering', 'Data Analyst', 'AI/ML • Python • SQL • C'],
+  intro: 'B.Tech graduate in Computer Science and Engineering (CSE), building practical skills in Python, SQL, AI/ML and data analysis. Interested in data analysis, data preprocessing, machine learning, visualization and extracting meaningful insights from data.',
+  location: 'Hyderabad, Telangana',
+  email: 'snehabogaram75@gmail.com',
   links: {
-    linkedin: 'https://www.linkedin.com/in/sushmita-dasari-227a40284/',
-    github: 'https://github.com/Sushmitadasari',
+        linkedin: 'https://www.linkedin.com/in/sneha-bogaram-5640262a3',
+        github: 'https://github.com/snehabogaram75-hub',
   },
-  resumePdf: '/assets/Sushmita_Dasari_Resume.pdf',
+  resumePdf: '/assets/Sneha_Bogaram_Resume.pdf',
   portrait: {
-    src: '/assets/portrait-720.webp',
-    srcSet: '/assets/portrait-420.webp 420w, /assets/portrait-720.webp 720w, /assets/portrait-1100.webp 1100w',
-    alt: 'Portrait of Sushmita Dasari',
+    src: '/assets/portrait-no-bg-720.png',
+    srcSet: '/assets/portrait-no-bg-420.png 420w, /assets/portrait-no-bg-720.png 720w, /assets/portrait-no-bg-1100.png 1100w',
+    alt: 'Portrait of Sneha Bogaram',
   },
-  interests: ['System Design', 'Cloud Computing (AWS)', 'Machine Learning'],
+  interests: ['Artificial Intelligence', 'Machine Learning', 'Predictive Maintenance', 'Python'],
 };
 
 export const education = [
   {
-    school: 'Aditya Engineering College',
-    place: 'Surampalem',
-    degree: 'Bachelor of Technology — Artificial Intelligence and Machine Learning',
-    period: 'October 2023 – Present',
-    score: 'CGPA 9.10',
-  },
-  {
-    school: 'Sri Chaitanya Junior College',
-    place: 'Kakinada',
-    degree: 'BIEAP — MPC',
-    period: 'June 2021 – May 2023',
-    score: 'Score 925/1000',
+    school: 'Princeton Institute of Engineering and Technology for Women',
+    place: 'Hyderabad, Telangana',
+    degree: 'Bachelor of Technology in Computer Science Engineering',
+    period: '2022 – 2026',
+    score: '7.90 CGPA',
   },
 ];
 
 export const experience = [
   {
-    company: 'Technical Hub Pvt Ltd',
-    role: 'Trainee',
-    place: 'Surampalem, AP',
-    period: 'May 2025 – June 2026',
+    company: 'NeuSparkX Technologies Pvt Ltd',
+    role: 'AI/ML',
+    place: 'India',
+    period: 'Current',
     points: [
-      'Completed one year of intensive Full-Stack Development (FSD) training covering frontend, backend, database integration, and deployment workflows.',
-      'Developed responsive and functional web applications by implementing user interfaces, server-side logic, and database connectivity.',
-      'Deployed and managed web applications while applying version control, debugging, and end-to-end development practices.',
+      'Working on AI/ML-focused tasks and developing practical machine learning skills.',
+      'Exploring data preparation, model training, prediction and evaluation workflows.',
+      'Building experience with Python and machine learning through project-based work.',
+    ],
+  },
+  {
+    company: 'TAO DIGITALS',
+    role: 'AI Data Annotation Intern',
+    place: 'India',
+    period: 'May 2026 – June 2026',
+    points: [
+      'Annotated and validated datasets for AI and Machine Learning model training while maintaining annotation quality.',
+      'Performed data classification, labeling and quality validation according to annotation guidelines.',
+      'Reviewed annotated datasets to identify inconsistencies and improve data quality.',
+      'Collaborated with cross-functional teams to deliver accurate datasets within project timelines.',
+      'Maintained documentation and followed quality assurance standards.',
     ],
   },
 ];
@@ -75,7 +89,6 @@ export type Project = {
   build: string[];
   features: string[];
   metrics: Metric[];
-  /** Omit when the repository isn't public — the GitHub button is hidden instead of linking to a 404. */
   github?: string;
   palette: Palette;
   motif: 'shield' | 'flow' | 'tenants';
@@ -83,90 +96,136 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    id: 'policyguard-ai',
-    title: 'PolicyGuard AI',
+    id: 'boiler-predictive-maintenance',
+    title: '250TPH Boiler Predictive Maintenance',
     year: '2026',
-    genre: 'AI • NLP • LLM',
-    logline: 'An AI-powered policy analysis platform across web, browser extension, mobile and desktop applications.',
-    stack: ['Python', 'NLP', 'LLM', 'REST API'],
+    genre: 'AI/ML • LSTM • Predictive Maintenance',
+    logline:
+      'A time-series machine learning project focused on forecasting boiler component conditions and identifying potential maintenance risks.',
+    stack: ['Python', 'TensorFlow', 'LSTM', 'Pandas', 'NumPy', 'Scikit-learn'],
     build: [
-      'Built an AI-powered policy analysis platform across web, browser extension, mobile, and desktop applications, processing 500+ policy documents with 92% accuracy and reducing manual review time by 60% across 8 policy categories.',
-      'Engineered LLM-based Q&A, key-information extraction, and REST API integration for 10+ document types, enabling real-time policy insights and reducing decision turnaround time by 45%.',
+      'Developed LSTM-based time-series forecasting workflows for boiler component data, including ash deposition in the Economizer and Air Preheater.',
+      'Worked with multiple prediction horizons to estimate current and future ash deposition and support earlier identification of critical operating conditions.',
+      'Handled leakage prediction as a separate modelling task and examined component risk indicators for predictive-maintenance use cases.',
     ],
     features: [
-      'LLM-based Q&A over policy documents',
-      'Key-information extraction',
-      'REST API integration for 10+ document types',
-      'Web, browser extension, mobile & desktop apps',
-      'Real-time policy insights',
+      '250TPH boiler component monitoring',
+      'Time-series forecasting with LSTM',
+      'Economizer ash deposition prediction',
+      'Air Preheater ash deposition prediction',
+      'Multiple future prediction horizons',
+      'Separate air/steam leakage modelling',
+      'Component risk and time-to-critical analysis',
     ],
     metrics: [
-      { value: '500+', label: 'policy documents processed' },
-      { value: '92%', label: 'accuracy' },
-      { value: '60%', label: 'less manual review time' },
-      { value: '45%', label: 'faster decision turnaround' },
-      { value: '8', label: 'policy categories' },
+      { value: '250TPH', label: 'boiler capacity' },
+      { value: 'LSTM', label: 'time-series model' },
+      { value: 'Multi-horizon', label: 'future predictions' },
     ],
-    // The resume links to https://github.com/Sushmitadasari/PolicyGuard-AI, which is not public yet (404).
-    // Add `github: 'https://github.com/Sushmitadasari/PolicyGuard-AI',` back once the repo is public.
-    palette: { from: '#2a0610', via: '#7a0f24', to: '#0b0710', accent: '#ff3d5a' },
-    motif: 'shield',
-  },
-  {
-    id: 'payment-gateway',
-    title: 'Payment Gateway System',
-    year: '2026',
-    genre: 'Full-Stack • Fintech • Microservices',
-    logline: 'A full-stack UPI & card payment gateway built around a strict payment state machine.',
-    stack: ['Node.js', 'Express', 'PostgreSQL', 'React', 'Docker'],
-    build: [
-      'Built full-stack UPI & card payment gateway processing 1,000+ transactions at 99.8% uptime with a strict payment state machine (processing → success/failed).',
-      'Dockerized microservice architecture cut deployment setup by 70%; backend optimizations reduced API response time by 40% and tripled throughput under load.',
-    ],
-    features: [
-      'UPI & card payments',
-      'Strict payment state machine (processing → success / failed)',
-      'Dockerized microservice architecture',
-      'Backend optimizations for load',
-    ],
-    metrics: [
-      { value: '1,000+', label: 'transactions processed' },
-      { value: '99.8%', label: 'uptime' },
-      { value: '70%', label: 'less deployment setup' },
-      { value: '40%', label: 'faster API response' },
-      { value: '3×', label: 'throughput under load' },
-    ],
-    github: 'https://github.com/Sushmitadasari/Payment-gateway-system-Project',
-    palette: { from: '#1a0d02', via: '#8a4a07', to: '#0a0806', accent: '#ffb547' },
+    palette: { from: '#04121f', via: '#0f4c6e', to: '#05080d', accent: '#4cc9ff' },
     motif: 'flow',
   },
   {
-    id: 'multi-tenant-saas',
-    title: 'Multi-Tenant SaaS Platform',
+    id: 'customer-churn-prediction',
+    title: 'Customer Churn Prediction',
     year: '2026',
-    genre: 'SaaS • Security • DevOps',
-    logline: 'Shared-database multi-tenancy with strict tenant isolation and 4-level JWT/RBAC.',
-    stack: ['Node.js', 'React', 'PostgreSQL', 'Docker Compose'],
+    genre: 'Machine Learning • Classification',
+    logline:
+      'A machine learning project focused on identifying customers who may be likely to leave a service.',
+    stack: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'Data Visualization'],
     build: [
-      'Architected shared-database multi-tenancy for 50+ concurrent tenants with strict tenant_id isolation and 4-level JWT/RBAC, achieving zero unauthorized-access incidents across 200+ users.',
-      'Implemented Docker Compose one-command deployment, reducing environment setup time from 45 minutes to under 2 minutes.',
+      'Explored a customer churn prediction use case using a machine learning workflow.',
+      'Focused on understanding customer data, preparing features and evaluating classification predictions.',
     ],
     features: [
-      'Shared-database multi-tenancy',
-      'Strict tenant_id isolation',
-      '4-level JWT / RBAC',
-      'One-command Docker Compose deployment',
+      'Customer data exploration',
+      'Data preprocessing',
+      'Feature preparation',
+      'Machine learning classification workflow',
+      'Model evaluation',
+      'Churn prediction use case',
     ],
     metrics: [
-      { value: '50+', label: 'concurrent tenants' },
-      { value: '200+', label: 'users' },
-      { value: '0', label: 'unauthorized-access incidents' },
-      { value: '45m → <2m', label: 'environment setup time' },
+      { value: 'ML', label: 'classification approach' },
+      { value: 'Python', label: 'implementation language' },
     ],
-    github: 'https://github.com/Sushmitadasari/Multi-Tenant-SaaS-Platform',
-    palette: { from: '#04121f', via: '#0f4c6e', to: '#05080d', accent: '#4cc9ff' },
+    palette: { from: '#1a0d02', via: '#8a4a07', to: '#0a0806', accent: '#ffb547' },
+    motif: 'shield',
+  },
+  {
+    id: 'wayvo',
+    title: 'Wayvo Application',
+    year: '2026',
+    genre: 'Flutter • Application Development',
+    logline:
+      'A mobile application project built with Flutter, with ongoing work on app assets and launcher icon integration.',
+    stack: ['Flutter', 'Dart', 'Mobile UI', 'Android', 'iOS'],
+    build: [
+      'Worked on a Flutter application project and its mobile app structure.',
+      'Configured application assets and worked through launcher icon generation and platform-specific setup.',
+    ],
+    features: [
+      'Flutter application development',
+      'Mobile user interface',
+      'Application asset management',
+      'Launcher icon setup',
+      'Platform-specific configuration',
+    ],
+    metrics: [
+      { value: 'Flutter', label: 'app framework' },
+      { value: 'Mobile', label: 'application platform' },
+    ],
+    palette: { from: '#03150f', via: '#0d5a40', to: '#050a08', accent: '#46e3a8' },
     motif: 'tenants',
   },
+  {
+    id: 'hospital-los-xai',
+    title: 'Hospital Length of Stay Prediction using Explainable AI',
+    year: '2026',
+    genre: 'Machine Learning • Healthcare • Explainable AI',
+    logline: 'A machine learning project to predict hospital length of stay and understand the factors influencing model predictions.',
+    stack: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'Explainable AI'],
+    build: [
+      'Cleaned and preprocessed healthcare data, handled missing values and performed feature engineering.',
+      'Conducted exploratory data analysis to explore important patient features.',
+      'Implemented regression and classification models using Scikit-learn.',
+      'Evaluated model performance using appropriate metrics.',
+      'Explored Explainable AI methods to interpret model predictions and improve transparency.',
+    ],
+    features: [
+      'Healthcare data preprocessing',
+      'Exploratory data analysis',
+      'Machine learning modelling',
+      'Model evaluation',
+      'Explainable AI',
+    ],
+    metrics: [],
+    palette: violet,
+    motif: 'flow',
+  },
+  {
+    id: 'traffic-violation-detection',
+    title: 'Traffic Violation Detection System',
+    year: '2026',
+    genre: 'Python • OpenCV • Computer Vision',
+    logline: 'A computer vision project for vehicle detection and number plate recognition with violation records stored in MySQL.',
+    stack: ['Python', 'OpenCV', 'MySQL', 'Image Processing'],
+    build: [
+      'Developed vehicle detection and number plate recognition workflows using Python and OpenCV.',
+      'Applied image processing techniques to support vehicle identification.',
+      'Stored traffic violation records in a MySQL database for retrieval.',
+      'Explored automation of traffic monitoring using computer vision.',
+    ],
+    features: [
+      'Vehicle detection',
+      'Number plate recognition',
+      'Image processing',
+      'MySQL record storage',
+    ],
+    metrics: [],
+    palette: ocean,
+    motif: 'shield',
+  }
 ];
 
 export type Achievement = {
@@ -180,175 +239,116 @@ export type Achievement = {
 
 export const achievements: Achievement[] = [
   {
-    id: 'algouniversity',
-    title: 'Tech Fellow',
-    org: 'AlgoUniversity',
-    detail: 'Selected through competitive national selection — advanced DSA, algorithm optimization, and competitive coding.',
-    laurel: 'National Selection',
+    id: 'academic-participation',
+    title: 'Academic & Extracurricular Participation',
+    org: 'School Activities',
+    detail: 'Actively participated in academic and extracurricular activities during schooling.',
+    laurel: 'Participation',
   },
   {
-    id: 'flipkart-grid',
-    title: 'Semi-Finalist',
-    org: 'Flipkart GRiD 7.0',
-    detail: 'Competed among top national engineering talent.',
-    laurel: 'Semi-Finalist',
-    link: 'https://drive.google.com/file/d/16pXA2hssyJqlYMr27wfi6U4bjKDLvh9f/view?usp=drive_link',
+    id: 'teamwork-leadership',
+    title: 'Teamwork & Leadership',
+    org: 'Event Participation',
+    detail: 'Demonstrated teamwork and leadership skills through participation in events.',
+    laurel: 'Teamwork',
   },
   {
-    id: 'branch-topper',
-    title: 'AIML Branch Topper',
-    org: 'B.Tech AI & ML',
-    detail: '9.24 SGPA for the semester.',
-    laurel: 'Branch Topper',
-  },
-  {
-    id: 'competitive-coding',
-    title: '850+ Problems Solved',
-    org: 'LeetCode • GFG • CodeChef',
-    detail: 'LeetCode: 350+ DSA problems (peak rating 1442). GFG: 300+ problems (rating 1436). CodeChef: 200+ problems.',
-    laurel: 'Competitive Coding',
-  },
-  {
-    id: 'hackerrank',
-    title: '5-Star Badges',
-    org: 'HackerRank',
-    detail: '5-star badges in C, Python, Java, and SQL.',
-    laurel: 'Four Languages',
+    id: 'abacus-certification',
+    title: 'Abacus Certification',
+    org: 'Abacus',
+    detail: 'Earned an Abacus certification demonstrating concentration and calculation skills.',
+    laurel: 'Certification',
   },
 ];
 
 export type Certification = { issuer: string; name: string; link: string };
 
 export const certifications: Certification[] = [
-  { issuer: 'NPTEL', name: 'Database Management System', link: 'https://drive.google.com/file/d/1MqkJHchXeaGD4S8mzPmEGxEYddAsxAjN/view?usp=drive_link' },
-  { issuer: 'NPTEL', name: 'Fundamentals of Artificial Intelligence', link: 'https://drive.google.com/file/d/1GqyUQ-lrE-bHaN457t6fIdssgGG4HMXf/view?usp=drive_link' },
-  { issuer: 'NPTEL', name: 'Deep Learning', link: 'https://drive.google.com/file/d/1PWSRP5SQDPzkoTCF3A24eIJoSpTwgsff/view?usp=sharing' },
-  { issuer: 'AWS', name: 'AWS Certified AI Practitioner', link: 'https://drive.google.com/file/d/1h8e5p0a9T6f5gBaOP2ROfwWHZfkkspGn/view?usp=drive_link' },
-  { issuer: 'AWS', name: 'AWS Academy Graduate – Cloud Foundations', link: 'https://www.credly.com/badges/2d4810f9-3dbe-444d-99b9-61312ea5e7df/public_url' },
-  { issuer: 'MongoDB', name: 'MongoDB Certified Associate Developer', link: 'https://www.credly.com/badges/fd3362bd-743a-4c4d-a68e-b1fdc5d46811/public_url' },
-  { issuer: 'GitHub', name: 'GitHub Foundations', link: 'https://drive.google.com/file/d/1o0fkCAMRWTg1oMwxlqu6t6wnOpBv66Vq/view?usp=sharing' },
-  { issuer: 'Pearson', name: 'IT Specialist – HTML and CSS', link: 'https://www.credly.com/badges/e4a55298-e396-41d8-a032-283aafe9fab7/public_url' },
-  { issuer: 'Oracle', name: 'Java Certified Foundations Associate', link: 'https://drive.google.com/file/d/1g-yyceHtLg_k2RWiOIJqH0MMcGlaH90P/view?usp=sharing' },
-  { issuer: 'Oracle', name: 'Oracle Certified Foundations Associate – Database', link: 'https://drive.google.com/file/d/10-DzabbcH2vHrI6bAohoT8czKRZMa2kV/view?usp=drive_link' },
-  { issuer: 'Cisco', name: 'HTML Essentials', link: 'https://www.credly.com/badges/eb27ca95-3b2a-4948-bef9-0385d1d49055/public_url' },
-  { issuer: 'Cisco', name: 'CSS Essentials', link: 'https://www.credly.com/badges/3b37497f-6a61-4889-af3c-ed337a460a0b/public_url' },
-  { issuer: 'Cisco', name: 'JavaScript Essentials 1', link: 'https://www.credly.com/badges/9cdd4d55-6ecc-463f-b254-811ccdd0539c/public_url' },
-  { issuer: 'Cisco', name: 'JavaScript Essentials 2', link: 'https://www.credly.com/badges/0e1b036e-4318-4c8e-b750-2aca77314442/public_url' },
-  { issuer: 'Cisco', name: 'Python Essentials 1', link: 'https://www.credly.com/badges/0e21e3eb-d8ef-4770-95d7-dcbd6f8696b1/public_url' },
-  { issuer: 'Udemy', name: 'Microsoft Azure Hands-On Training (AZ-900, AZ-104, AZ-305)', link: 'https://drive.google.com/file/d/1KrXClhY0nJ3Acxs7DioNf4Q1rpaMvgPT/view?usp=sharing' },
+  { issuer: 'Deloitte', name: 'Data Analytics Job Simulation', link: '' },
+  { issuer: 'Tata', name: 'Data Visualization: Empowering Business with Effective Insights', link: '' },
+  { issuer: 'IBM SkillsBuild', name: 'IBM SkillsBuild', link: '' },
+  { issuer: 'Skill India', name: 'Python Programming', link: '' },
 ];
 
 export type Skill = { name: string; mono: string; note?: string };
-export type SkillCategory = { id: string; title: string; subtitle: string; skills: Skill[] };
+export type SkillCategory = {
+  id: string;
+  title: string;
+  subtitle: string;
+  skills: Skill[];
+};
 
 export const skillCategories: SkillCategory[] = [
   {
     id: 'languages',
-    title: 'Languages',
-    subtitle: 'Java is the primary language',
+    title: 'Programming',
+    subtitle: 'Languages used in project work',
     skills: [
-      { name: 'Java', mono: 'Jv', note: 'Primary' },
-      { name: 'Python', mono: 'Py' },
-      { name: 'C', mono: 'C' },
-      { name: 'C++', mono: 'C+' },
+      { name: 'Python', mono: 'Py', note: 'Primary focus' },
+      { name: 'SQL', mono: 'Sq' },
     ],
   },
   {
-    id: 'frontend',
-    title: 'Frontend',
-    subtitle: 'Interfaces & the web platform',
+    id: 'aiml',
+    title: 'AI & Machine Learning',
+    subtitle: 'Model development and prediction',
     skills: [
-      { name: 'React', mono: 'Re' },
-      { name: 'HTML', mono: 'Ht' },
-      { name: 'CSS', mono: 'Cs' },
-      { name: 'JavaScript', mono: 'Js' },
+      { name: 'Machine Learning', mono: 'ML' },
+      { name: 'LSTM', mono: 'Ls' },
+      { name: 'TensorFlow', mono: 'Tf' },
+      { name: 'Scikit-learn', mono: 'Sk' },
     ],
   },
   {
-    id: 'backend',
-    title: 'Backend',
-    subtitle: 'Server-side logic',
+    id: 'data',
+    title: 'Data Handling',
+    subtitle: 'Preparing and working with datasets',
     skills: [
-      { name: 'Node.js', mono: 'No' },
-      { name: 'Express.js', mono: 'Ex' },
+      { name: 'Pandas', mono: 'Pd' },
+      { name: 'NumPy', mono: 'Np' },
+      { name: 'Data Preprocessing', mono: 'Dp' },
+      { name: 'Data Visualization', mono: 'Dv' },
     ],
   },
   {
-    id: 'infra',
-    title: 'Infra & Tools',
-    subtitle: 'Shipping & architecture',
+    id: 'tools',
+    title: 'Tools & Development',
+    subtitle: 'Project workflow and development tools',
     skills: [
-      { name: 'Docker', mono: 'Dk' },
-      { name: 'Docker Compose', mono: 'Dc' },
-      { name: 'REST APIs', mono: 'Ap' },
-      { name: 'Microservices', mono: 'Ms' },
-      { name: 'JWT Auth', mono: 'Jw' },
-      { name: 'Git / GitHub', mono: 'Gt' },
-      { name: 'Postman', mono: 'Pm' },
-    ],
-  },
-  {
-    id: 'databases',
-    title: 'Databases',
-    subtitle: 'Indexing • Normalization',
-    skills: [
-      { name: 'PostgreSQL', mono: 'Pg' },
-      { name: 'MongoDB', mono: 'Mg' },
+      { name: 'Jupyter Notebook', mono: 'Jn' },
+      { name: 'VS Code', mono: 'Vs' },
+      { name: 'Git', mono: 'Gt' },
       { name: 'MySQL', mono: 'My' },
     ],
   },
   {
-    id: 'fundamentals',
-    title: 'CS Fundamentals',
-    subtitle: 'The foundations',
+    id: 'application',
+    title: 'Application Development',
+    subtitle: 'Mobile app project experience',
     skills: [
-      { name: 'DSA', mono: 'Ds' },
-      { name: 'OS', mono: 'Os' },
-      { name: 'CN', mono: 'Cn' },
-      { name: 'DBMS', mono: 'Db' },
-      { name: 'OOPs', mono: 'Oo' },
-      { name: 'Collections', mono: 'Co' },
-      { name: 'Multithreading', mono: 'Mt' },
-    ],
-  },
-  {
-    id: 'interests',
-    title: 'Interests',
-    subtitle: 'Coming soon to the series',
-    skills: [
-      { name: 'System Design', mono: 'Sd' },
-      { name: 'Cloud Computing (AWS)', mono: 'Aw' },
-      { name: 'Machine Learning', mono: 'Ml' },
+      { name: 'Flutter', mono: 'Fl' },
+      { name: 'Dart', mono: 'Da' },
     ],
   },
 ];
 
-/**
- * Factual cross-references shown when a skill card is hovered/tapped:
- * where the skill appears in the projects, certifications or achievements on the resume.
- */
 export const skillEvidence: Record<string, string[]> = {
-  Java: ['Oracle Java Certified Foundations Associate', 'HackerRank 5-star'],
-  Python: ['PolicyGuard AI', 'Cisco Python Essentials 1', 'HackerRank 5-star'],
-  C: ['HackerRank 5-star'],
-  React: ['Payment Gateway System', 'Multi-Tenant SaaS Platform'],
-  HTML: ['Pearson IT Specialist – HTML and CSS', 'Cisco HTML Essentials'],
-  CSS: ['Pearson IT Specialist – HTML and CSS', 'Cisco CSS Essentials'],
-  JavaScript: ['Cisco JavaScript Essentials 1 & 2'],
-  'Node.js': ['Payment Gateway System', 'Multi-Tenant SaaS Platform'],
-  'Express.js': ['Payment Gateway System'],
-  Docker: ['Payment Gateway System'],
-  'Docker Compose': ['Multi-Tenant SaaS Platform'],
-  'REST APIs': ['PolicyGuard AI'],
-  Microservices: ['Payment Gateway System'],
-  'JWT Auth': ['Multi-Tenant SaaS Platform'],
-  'Git / GitHub': ['GitHub Foundations'],
-  PostgreSQL: ['Payment Gateway System', 'Multi-Tenant SaaS Platform'],
-  MongoDB: ['MongoDB Certified Associate Developer'],
-  DBMS: ['NPTEL Database Management System', 'Oracle Database Foundations'],
-  DSA: ['AlgoUniversity Tech Fellow', '850+ problems solved'],
-  'Cloud Computing (AWS)': ['AWS Certified AI Practitioner', 'AWS Academy Cloud Foundations'],
-  'Machine Learning': ['B.Tech AI & ML', 'NPTEL Deep Learning'],
+  Python: ['250TPH Boiler Predictive Maintenance', 'Customer Churn Prediction'],
+  SQL: ['Data handling and database fundamentals'],
+  'Machine Learning': ['250TPH Boiler Predictive Maintenance', 'Customer Churn Prediction'],
+  LSTM: ['250TPH Boiler Predictive Maintenance'],
+  TensorFlow: ['250TPH Boiler Predictive Maintenance'],
+  'Scikit-learn': ['Machine learning project workflows'],
+  Pandas: ['Boiler time-series data preparation', 'Customer data preparation'],
+  NumPy: ['Numerical data processing'],
+  'Data Preprocessing': ['Boiler predictive maintenance', 'Customer churn prediction'],
+  'Data Visualization': ['Exploratory data analysis workflows'],
+  'Jupyter Notebook': ['Machine learning experiments'],
+  'VS Code': ['Project development'],
+  Git: ['Development workflow'],
+  MySQL: ['Database fundamentals'],
+  Flutter: ['Wayvo Application'],
+  Dart: ['Wayvo Application'],
 };
 
 export type Episode = {
@@ -368,202 +368,219 @@ export type Season = {
   episodes: Episode[];
 };
 
-const crimson: Palette = { from: '#24060b', via: '#6e0d1d', to: '#09070a', accent: '#ff3d5a' };
-const amber: Palette = { from: '#1c1003', via: '#6b3c06', to: '#0a0806', accent: '#ffb547' };
-const ocean: Palette = { from: '#04121f', via: '#0f4c6e', to: '#05080d', accent: '#4cc9ff' };
-const violet: Palette = { from: '#120822', via: '#3d1a6e', to: '#07060c', accent: '#b98bff' };
-const jade: Palette = { from: '#03150f', via: '#0d5a40', to: '#050a08', accent: '#46e3a8' };
-
 export const seasons: Season[] = [
   {
     number: 1,
-    title: 'The Beginning',
-    period: '2021 – 2023',
-    synopsis: 'Intermediate years at Sri Chaitanya Junior College, Kakinada — Mathematics, Physics and Chemistry.',
+    title: 'The Foundation',
+    period: 'B.Tech',
+    synopsis: 'Building a foundation in computer science and developing an interest in artificial intelligence and machine learning.',
     episodes: [
       {
         code: 'S01 E01',
-        title: 'The Foundation',
-        description: 'BIEAP, MPC at Sri Chaitanya Junior College, Kakinada — finishing with a score of 925/1000.',
-        tags: ['MPC', 'BIEAP'],
-        runtime: 'Jun 2021 – May 2023',
-        palette: amber,
+        title: 'The Graduate',
+        description: 'Completed a Bachelor of Technology and began focusing on practical AI/ML and software projects.',
+        tags: ['B.Tech', 'Computer Science', 'AI/ML'],
+        runtime: 'Graduated 2026',
+        palette: violet,
       },
     ],
   },
   {
     number: 2,
-    title: 'Enter: AI & ML',
-    period: '2023 – Present',
-    synopsis: 'B.Tech in Artificial Intelligence and Machine Learning at Aditya Engineering College, Surampalem.',
+    title: 'Learning AI & ML',
+    period: '2026',
+    synopsis: 'Developing hands-on experience with Python, machine learning, time-series data and prediction workflows.',
     episodes: [
       {
         code: 'S02 E01',
-        title: 'The Engineer',
-        description: 'Bachelor of Technology in Artificial Intelligence and Machine Learning — CGPA 9.10.',
-        tags: ['B.Tech', 'AI & ML', 'CGPA 9.10'],
-        runtime: 'Oct 2023 – Present',
-        palette: violet,
+        title: 'The Data',
+        description: 'Working with structured datasets, data preparation and exploratory analysis.',
+        tags: ['Python', 'Pandas', 'NumPy'],
+        runtime: 'Project-based learning',
+        palette: amber,
       },
       {
         code: 'S02 E02',
-        title: 'The Topper',
-        description: 'AIML Branch Topper with a 9.24 SGPA for the semester.',
-        tags: ['9.24 SGPA', 'Branch Topper'],
-        runtime: 'One semester',
-        palette: crimson,
-      },
-      {
-        code: 'S02 E03',
-        title: 'The Problem Solver',
-        description: 'LeetCode 350+ (peak 1442), GFG 300+ (1436), CodeChef 200+ and HackerRank 5-star badges in C, Python, Java and SQL.',
-        tags: ['DSA', 'LeetCode', 'GFG', 'CodeChef', 'HackerRank'],
-        runtime: '850+ problems',
-        palette: jade,
+        title: 'The Model',
+        description: 'Exploring LSTM models and multi-horizon forecasting for boiler predictive maintenance.',
+        tags: ['LSTM', 'TensorFlow', 'Forecasting'],
+        runtime: '2026',
+        palette: ocean,
       },
     ],
   },
   {
     number: 3,
-    title: 'Learning to Build',
-    period: '2025 – 2026',
-    synopsis: 'One year of intensive Full-Stack Development training as a Trainee at Technical Hub Pvt Ltd.',
+    title: 'Building Projects',
+    period: '2026',
+    synopsis: 'Applying technical learning to predictive maintenance, customer churn prediction and mobile application development.',
     episodes: [
       {
         code: 'S03 E01',
-        title: 'The Trainee',
-        description: 'Intensive Full-Stack Development training covering frontend, backend, database integration and deployment workflows.',
-        tags: ['FSD', 'Frontend', 'Backend', 'Databases'],
-        runtime: 'May 2025 – Jun 2026',
-        palette: ocean,
+        title: 'Predictive Maintenance',
+        description: 'Working on ash deposition and leakage prediction for 250TPH boiler components.',
+        tags: ['Boiler', 'LSTM', 'Risk Prediction'],
+        runtime: '2026',
+        palette: crimson,
       },
       {
         code: 'S03 E02',
-        title: 'The Developer',
-        description: 'Developed responsive web applications — user interfaces, server-side logic and database connectivity.',
-        tags: ['React', 'Node.js', 'Express.js'],
-        runtime: 'Technical Hub',
-        palette: violet,
+        title: 'Customer Churn',
+        description: 'Exploring a machine learning classification use case to predict possible customer churn.',
+        tags: ['Python', 'Machine Learning', 'Classification'],
+        runtime: '2026',
+        palette: jade,
       },
       {
         code: 'S03 E03',
-        title: 'The Deployer',
-        description: 'Deployed and managed web applications with version control, debugging and end-to-end development practices.',
-        tags: ['Git / GitHub', 'Deployment'],
-        runtime: 'Technical Hub',
-        palette: jade,
+        title: 'Wayvo',
+        description: 'Working on a Flutter application and its mobile development assets.',
+        tags: ['Flutter', 'Dart', 'Mobile App'],
+        runtime: '2026',
+        palette: violet,
       },
     ],
   },
   {
     number: 4,
-    title: 'Building Real Products',
-    period: '2026',
-    synopsis: 'Three Originals — an AI platform, a payment gateway and a multi-tenant SaaS — plus national-level recognition.',
+    title: 'The Next Chapter',
+    period: 'Now',
+    synopsis: 'Continuing to strengthen Python, machine learning and practical engineering skills.',
     episodes: [
       {
         code: 'S04 E01',
-        title: 'The AI Builder',
-        description: 'PolicyGuard AI — LLM-based Q&A and key-information extraction across 500+ policy documents at 92% accuracy.',
-        tags: ['Python', 'NLP', 'LLM'],
-        runtime: '2026',
-        palette: crimson,
-      },
-      {
-        code: 'S04 E02',
-        title: 'The Architect',
-        description: 'Payment Gateway System and Multi-Tenant SaaS Platform — state machines, microservices, tenant isolation and RBAC.',
-        tags: ['Node.js', 'PostgreSQL', 'Docker'],
-        runtime: '2026',
-        palette: amber,
-      },
-      {
-        code: 'S04 E03',
-        title: 'The Fellow',
-        description: 'Selected as a Tech Fellow at AlgoUniversity and reached the Semi-Finals of Flipkart GRiD 7.0.',
-        tags: ['AlgoUniversity', 'Flipkart GRiD 7.0'],
-        runtime: 'National stage',
+        title: 'Keep Building',
+        description: 'Improving project quality, model evaluation and the ability to explain technical work clearly.',
+        tags: ['Python', 'AI/ML', 'Continuous Learning'],
+        runtime: 'Ongoing',
         palette: ocean,
       },
     ],
   },
+];
+
+export type TopPick = {
+  label: string;
+  title: string;
+  detail: string;
+  palette: Palette;
+};
+
+export const topPicks: TopPick[] = [
   {
-    number: 5,
-    title: "What's Next",
-    period: 'Now streaming',
-    synopsis: 'The interests on the resume point to the next arc of the story.',
-    episodes: [
-      {
-        code: 'S05 E01',
-        title: 'The Next Chapter',
-        description: 'Exploring System Design, Cloud Computing (AWS) and Machine Learning.',
-        tags: ['System Design', 'AWS', 'Machine Learning'],
-        runtime: 'In production',
-        palette: violet,
-      },
-    ],
+    label: 'Featured project',
+    title: 'Boiler Predictive Maintenance',
+    detail: 'LSTM forecasting for boiler component conditions',
+    palette: ocean,
+  },
+  {
+    label: 'AI/ML project',
+    title: 'Ash Deposition Prediction',
+    detail: 'Economizer and Air Preheater modelling',
+    palette: crimson,
+  },
+  {
+    label: 'Prediction use case',
+    title: 'Leakage Modelling',
+    detail: 'Separate leakage prediction and risk indicators',
+    palette: amber,
+  },
+  {
+    label: 'Machine learning',
+    title: 'Customer Churn',
+    detail: 'Customer data and classification workflow',
+    palette: violet,
+  },
+  {
+    label: 'Application project',
+    title: 'Wayvo',
+    detail: 'Flutter mobile application',
+    palette: jade,
+  },
+  {
+    label: 'Core language',
+    title: 'Python',
+    detail: 'Current focus for AI/ML development',
+    palette: ocean,
+  },
+  {
+    label: 'Model approach',
+    title: 'LSTM',
+    detail: 'Time-series forecasting',
+    palette: crimson,
+  },
+  {
+    label: 'Data tools',
+    title: 'Pandas & NumPy',
+    detail: 'Data preparation and numerical processing',
+    palette: amber,
+  },
+  {
+    label: 'Development',
+    title: 'Flutter',
+    detail: 'Mobile application development',
+    palette: jade,
+  },
+  {
+    label: 'Career focus',
+    title: 'AI & Machine Learning',
+    detail: 'Learning through practical projects',
+    palette: violet,
   },
 ];
 
-export type TopPick = { label: string; title: string; detail: string; palette: Palette };
-
-export const topPicks: TopPick[] = [
-  { label: 'Primary language', title: 'Java', detail: 'Listed as primary on the resume • Oracle certified', palette: amber },
-  { label: 'The AI Original', title: 'PolicyGuard AI', detail: '500+ documents • 92% accuracy', palette: crimson },
-  { label: 'Biggest stage', title: 'Flipkart GRiD 7.0', detail: 'Semi-Finalist', palette: ocean },
-  { label: 'National selection', title: 'AlgoUniversity', detail: 'Tech Fellow', palette: violet },
-  { label: 'Academic high', title: 'Branch Topper', detail: '9.24 SGPA in AI & ML', palette: jade },
-  { label: 'Cloud credential', title: 'AWS AI Practitioner', detail: 'AWS Certified', palette: amber },
-  { label: 'Problems solved', title: '850+', detail: 'LeetCode 350+ • GFG 300+ • CodeChef 200+', palette: crimson },
-  { label: 'The training arc', title: '1 Year of FSD', detail: 'Technical Hub Pvt Ltd', palette: ocean },
-  { label: 'Database credential', title: 'MongoDB', detail: 'Certified Associate Developer', palette: jade },
-  { label: 'Current focus', title: 'System Design', detail: 'with Cloud (AWS) & Machine Learning', palette: violet },
-];
-
-/** Slides for the "▶ Play Intro" cinematic sequence. */
-export type IntroSlide = { kicker: string; title: string; lines: string[]; chips?: string[] };
+/** Slides for the "Play Intro" cinematic sequence. */
+export type IntroSlide = {
+  kicker: string;
+  title: string;
+  lines: string[];
+  chips?: string[];
+};
 
 export const introSlides: IntroSlide[] = [
   {
-    kicker: 'Education',
-    title: 'B.Tech · AI & ML',
-    lines: ['Aditya Engineering College, Surampalem', 'October 2023 – Present'],
-    chips: ['CGPA 9.10'],
+    kicker: 'Introduction',
+    title: 'Sneha Bogaram',
+    lines: ['B.Tech graduate', 'Hyderabad, Telangana', 'AI/ML and Python-focused project work'],
+    chips: ['AI/ML', 'Python'],
   },
   {
-    kicker: 'Skills',
-    title: 'Java first.',
-    lines: ['Python, C, C++ · React, Node.js, Express.js', 'PostgreSQL, MongoDB, MySQL · Docker, REST, JWT'],
-    chips: ['Java', 'Python', 'React', 'Node.js', 'Docker', 'PostgreSQL'],
+    kicker: 'Technical focus',
+    title: 'Learning by building.',
+    lines: ['Python, machine learning and data preparation', 'Time-series forecasting with LSTM models'],
+    chips: ['Python', 'LSTM', 'TensorFlow', 'Pandas'],
   },
   {
-    kicker: 'Training',
-    title: 'The Training Arc',
-    lines: ['One year of intensive Full‑Stack Development training', 'Trainee · Technical Hub Pvt Ltd · May 2025 – June 2026', 'Frontend · Backend · Databases · Deployment'],
+    kicker: 'Featured project',
+    title: 'Boiler Predictive Maintenance',
+    lines: ['250TPH boiler component monitoring', 'Ash deposition forecasting and separate leakage modelling'],
+    chips: ['Predictive Maintenance', 'LSTM'],
   },
   {
-    kicker: 'Projects',
-    title: 'Three Originals',
-    lines: ['PolicyGuard AI — 500+ documents, 92% accuracy', 'Payment Gateway — 1,000+ transactions, 99.8% uptime', 'Multi-Tenant SaaS — 50+ tenants, zero unauthorized access'],
+    kicker: 'Machine learning',
+    title: 'Customer Churn Prediction',
+    lines: ['Customer data preparation', 'Classification and model evaluation workflow'],
+    chips: ['Python', 'Machine Learning'],
   },
   {
-    kicker: 'Achievements',
-    title: 'Top Moments',
-    lines: ['Tech Fellow — AlgoUniversity', 'Semi-Finalist — Flipkart GRiD 7.0', 'AIML Branch Topper — 9.24 SGPA'],
+    kicker: 'Application development',
+    title: 'Wayvo',
+    lines: ['Flutter application project', 'Mobile UI and application asset configuration'],
+    chips: ['Flutter', 'Dart'],
   },
   {
-    kicker: 'Certified',
-    title: '16 Certifications',
-    lines: ['AWS · MongoDB · Oracle · GitHub · Pearson', 'NPTEL · Cisco · Udemy'],
+    kicker: 'Experience',
+    title: 'Growing through practice',
+    lines: ['AI/ML-related project work', 'AI data annotation internship at TAO DIGITALS'],
   },
   {
     kicker: 'Current mission',
-    title: 'Now exploring',
-    lines: ['System Design · Cloud Computing (AWS) · Machine Learning'],
+    title: 'Build. Learn. Improve.',
+    lines: ['Strengthening Python and machine learning skills', 'Turning project work into practical solutions'],
   },
 ];
 
-export type ProfileId = 'sushmita' | 'recruiter' | 'developer' | 'creative';
+export type ProfileId = 'sneha' | 'recruiter' | 'developer' | 'creative';
 export type SectionId = 'about' | 'journey' | 'originals' | 'picks' | 'skills' | 'moments' | 'story';
 
 export const viewerProfiles: {
@@ -574,8 +591,8 @@ export const viewerProfiles: {
   order: SectionId[];
 }[] = [
   {
-    id: 'sushmita',
-    name: 'Sushmita',
+    id: 'sneha',
+    name: 'Sneha',
     blurb: 'The full series, in order',
     color: '#e5132b',
     order: ['about', 'journey', 'originals', 'picks', 'skills', 'moments', 'story'],
@@ -583,32 +600,70 @@ export const viewerProfiles: {
   {
     id: 'recruiter',
     name: 'Recruiter',
-    blurb: 'Resume, achievements & skills first',
+    blurb: 'Projects, experience & skills first',
     color: '#4cc9ff',
     order: ['story', 'moments', 'skills', 'originals', 'about', 'journey', 'picks'],
   },
   {
     id: 'developer',
-    name: 'Developer',
-    blurb: 'Projects, stack & GitHub first',
+    name: 'AI/ML',
+    blurb: 'Machine learning projects and tools',
     color: '#46e3a8',
     order: ['originals', 'skills', 'journey', 'moments', 'about', 'picks', 'story'],
   },
   {
     id: 'creative',
-    name: 'Creative',
-    blurb: 'The story arc & highlights first',
+    name: 'Explorer',
+    blurb: 'The journey and project highlights',
     color: '#ffb547',
     order: ['journey', 'picks', 'originals', 'moments', 'about', 'skills', 'story'],
   },
 ];
 
-export const sectionMeta: Record<SectionId, { nav: string; card: string; meta: string; palette: Palette }> = {
-  about: { nav: 'About', card: 'About Me', meta: 'The Pilot • Education & training', palette: violet },
-  journey: { nav: 'Journey', card: 'My Journey', meta: `${seasons.length} Seasons • ${seasons.reduce((n, s) => n + s.episodes.length, 0)} Episodes`, palette: amber },
-  originals: { nav: 'Originals', card: 'My Projects', meta: `${projects.length} Originals • 2026`, palette: crimson },
-  picks: { nav: 'Top Picks', card: 'Top Picks', meta: 'Top 10 from the resume', palette: jade },
-  skills: { nav: 'Skills', card: 'My Skills', meta: `${skillCategories.length} Categories`, palette: ocean },
-  moments: { nav: 'Moments', card: 'My Achievements', meta: `${achievements.length} Moments • ${certifications.length} Certifications`, palette: crimson },
-  story: { nav: 'Resume', card: 'The Full Story', meta: 'Resume • View & download', palette: violet },
+export const sectionMeta: Record<
+  SectionId,
+  { nav: string; card: string; meta: string; palette: Palette }
+> = {
+  about: {
+    nav: 'About',
+    card: 'About Me',
+    meta: 'Introduction • Education & experience',
+    palette: violet,
+  },
+  journey: {
+    nav: 'Journey',
+    card: 'My Journey',
+    meta: `${seasons.length} Seasons • ${seasons.reduce((n, s) => n + s.episodes.length, 0)} Episodes`,
+    palette: amber,
+  },
+  originals: {
+    nav: 'Originals',
+    card: 'My Projects',
+    meta: `${projects.length} Projects • AI/ML & Application Development`,
+    palette: crimson,
+  },
+  picks: {
+    nav: 'Top Picks',
+    card: 'Top Picks',
+    meta: 'Featured projects and technical interests',
+    palette: jade,
+  },
+  skills: {
+    nav: 'Skills',
+    card: 'My Skills',
+    meta: `${skillCategories.length} Categories`,
+    palette: ocean,
+  },
+  moments: {
+    nav: 'Moments',
+    card: 'Achievements & Certifications',
+    meta: `${achievements.length} Verified Achievements • ${certifications.length} Certifications`,
+    palette: crimson,
+  },
+  story: {
+    nav: 'Resume',
+    card: 'The Full Story',
+    meta: 'Resume • View & download',
+    palette: violet,
+  },
 };

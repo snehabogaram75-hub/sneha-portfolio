@@ -45,8 +45,8 @@ export default function Hero({ onPlay, onResume, profileId }: { onPlay: () => vo
 
   const floating = [
     { text: education[0].score, sub: 'B.Tech AI & ML', pos: 'left-[2%] top-[30%]', depth: 1 },
-    { text: `${achievements[0].title}`, sub: achievements[0].org, pos: 'right-[0%] top-[18%]', depth: -1 },
-    { text: 'Java · React · Node.js', sub: 'Primary stack', pos: 'right-[4%] bottom-[24%]', depth: 0.6 },
+    ...(achievements[0] ? [{ text: achievements[0].title, sub: achievements[0].org, pos: 'right-[0%] top-[18%]', depth: -1 }] : []),
+    { text: 'Python · SQL · C', sub: 'Core skills', pos: 'right-[4%] bottom-[24%]', depth: 0.6 },
   ];
 
   return (
@@ -85,7 +85,7 @@ export default function Hero({ onPlay, onResume, profileId }: { onPlay: () => vo
           transition={{ duration: 1.6, ease: EASE, delay: 0.1 }}
         >
           {/* rim light ring */}
-          <div aria-hidden className="absolute bottom-[8%] left-1/2 h-[78%] w-[78%] -translate-x-1/2 rounded-full border border-crimson-2/20 shadow-[0_0_120px_rgba(229,19,43,0.35),inset_0_0_80px_rgba(229,19,43,0.18)]" />
+          <div aria-hidden className="absolute bottom-[8%] left-1/2 h-[78%] w-[78%] -translate-x-1/2 rounded-none border-0 shadow-none" />
           <img
             src={profile.portrait.src}
             srcSet={profile.portrait.srcSet}
